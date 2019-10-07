@@ -21,7 +21,7 @@ function clickSubmit() {
 }
 
 function clickCheck() {
-  $('.shopping-item-toggle').on('click', function(event) {
+  $('.shopping-list').on('click', 'li .shopping-item-toggle', function(event) {
           event.preventDefault();
           let crossout = $(this).closest('li').find('.shopping-item')
           console.log(crossout);
@@ -31,10 +31,11 @@ function clickCheck() {
 }
 
 function clickDelete() {
-  $('.shopping-item-delete').on('click', function(event) {
-          event.preventDefault();
-          $(this).parents('li').remove()
-        });
+  $('.shopping-list').on('click', 'li .shopping-item-delete', function(event) {
+        event.preventDefault();
+        console.log(event.target);
+        $(this).parents('li').remove()
+  });
 }
 
 
